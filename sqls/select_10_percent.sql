@@ -14,7 +14,7 @@ WITH numbered_data AS (
   SELECT *, ROW_NUMBER() OVER () AS row_num
   FROM (SELECT * FROM `projeto.dataset.catfacts` ORDER BY RAND())
 )
-SELECT * FROM numbered_data
+SELECT  tx_catfact,dt_updated,dt_send FROM numbered_data
 WHERE row_num <= (SELECT CASE WHEN COUNT(*)*0.1 < 1 THEN 1 ELSE COUNT(*)*0.1 END FROM `projeto.dataset.catfacts`);
 
 --A consulta acima usa uma CTE para retornar nossa tabela com os dados ordenados randomicamente e com um campo a mais que numera cada linha.
