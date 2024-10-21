@@ -10,7 +10,7 @@ As respostas devem constar em um repositório no GitHub e o link do repositório
   **Resposta em: scripts/CatFact.py**
   
 2 - Com o tempo, o aplicativo ganhou popularidade e o número de fatos sobre gatos cresceu exponencialmente. Agora, a solução local não é mais viável e é necessário transpor a solução para a nuvem. Você precisa projetar uma arquitetura na plataforma Google Cloud que seja capaz de extrair, armazenar e disponibilizar os dados para os times de anaytics. Não é necessário implementar ou codificar, apenas desenhar a arquitetura.  
-  **Resposta em: docs/architecture_GCP.pdf**
+  **Resposta em: architecture_GCP.pdf**
   
 3 - Com o tempo, o time de analytics também sentiu necessidade de realizar suas próprias consultas sobre os dados, como a tecnologia mais conhecida por eles é o BigQuery, você precisa especificar o esquema da tabela de dados de fatos sobre gatos (cat facts), inclua os campos, tipos de campos e quaisquer outras considerações necessárias. A especificação pode ser feita por diagrama ou por código.  
    **Resposta em: sqls/create_table_catfacts.sql**
