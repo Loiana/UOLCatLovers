@@ -26,14 +26,18 @@ def request_api():
     
     except requests.exceptions.HTTPError as errh:
         print(f"HTTP Error: {errh}")
+ 
     except requests.exceptions.ConnectionError as errc:
         print(f"Error Connecting: {errc}")
+
     except requests.exceptions.Timeout as errt:
         print(f"Timeout Error: {errt}")
+
     except requests.exceptions.RequestException as err:
         print(f"An Error Occurred: {err}")
-    
-    return None  # Retorna None em caso de falha
+
+    # Retorna None em caso de falha
+    return None 
 
 
 def save_csv(json_data):
@@ -51,24 +55,29 @@ def save_csv(json_data):
 
     except ValueError as ve:
         print(f"Erro ao converter dados JSON para DataFrame: {ve}")
+
     except IOError as ioe:
         print(f"Erro ao salvar o arquivo CSV: {ioe}")
+
     except Exception as e:
         print(f"Um erro inesperado ocorreu: {e}")
-
-    return None  # Retorna None em caso de falha
+        
+    # Retorna None em caso de falha
+    return None
 
 
 def main():
 
-    print("Início")
+    print("Begin")
+    print("May take a few seconds to respond...")
 
     data = request_api()
     #print(data)
 
-    save_csv(data)
+    if data is not None:
+        save_csv(data)
 
-    print("Fim")
+    print("End")
 
 
 if __name__ == "__main__":
@@ -77,6 +86,6 @@ if __name__ == "__main__":
         main()
 
     except Exception as e:
-        print(f"Erro crítico no programa: {e}")
+        print(f"Critical error: {e}")
 
         sys.exit(1)
